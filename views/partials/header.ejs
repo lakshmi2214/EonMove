@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EonMove - <%= title %>
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <nav class="navbar" id="mainNavbar">
+        <div class="container nav-content">
+            <a href="/" class="logo-wrapper">
+                <img src="/images/New_Logo-removebg-preview (1).png" alt="EonMove">
+                <span class="logo-tagline">Electrifying Your Mobility</span>
+            </a>
+            <div class="nav-links">
+                <a href="/about">About us</a>
+                <a href="/services">Our Services</a>
+                <a href="/blogs">Blogs</a>
+                <a href="/cities">Cities we operate</a>
+                <a href="/contact">Contact us</a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            const nav = document.getElementById('mainNavbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>

@@ -1,0 +1,14 @@
+{
+  "name": "eon-move-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "open": "^11.0.0"
+  }
+}

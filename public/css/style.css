@@ -1286,29 +1286,30 @@ p {
 @media (max-width: 1024px) {
     .inquiry-contact-section {
         padding: 4rem 0;
+        background: rgb(42, 162, 222);
+        /* Apply blue background to entire section on mobile */
+    }
+
+    .contact-green-band {
+        display: none;
+        /* Hide the band since the section background is now blue */
     }
 
     .inquiry-grid {
         grid-template-columns: 1fr;
-        gap: 0;
-    }
-
-    .contact-green-band {
-        position: static;
-        transform: none;
-        height: auto;
-        padding: 6rem 1.5rem 4rem;
-        margin-top: -80px;
-        z-index: 1;
+        gap: 2rem;
     }
 
     .contact-info-side {
         padding-left: 0;
         text-align: center;
+        margin-top: 3rem;
     }
 
     .contact-info-side h2 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
+        color: #000;
+        /* Keeping black as requested by the branding shown */
     }
 
     .contact-item {

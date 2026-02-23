@@ -1,27 +1,27 @@
 <%- include('partials/header') %>
 
     <main>
-        <!-- Section 1: Top Hero Banner Image -->
+        <!-- Section 1: Top Hero Banner Image (Complete Image Display) -->
         <section
-            style="width: 100%; background: #ffffff; border-bottom: 3px solid #9bcf5a; padding-top: 100px; padding-bottom: 20px; display: flex; justify-content: center; align-items: center;">
-            <div class="container" style="text-align: center;">
+            style="width: 100%; background: #ffffff; border-bottom: 2px solid #f1f5f9; padding-top: 100px; padding-bottom: 0px; overflow: hidden;">
+            <div style="width: 100%; margin: 0 auto; text-align: center;">
                 <img src="/images/16469.png" alt="EonMove Banner"
-                    style="width: 100%; max-height: 380px; object-fit: contain; display: block; margin: 0 auto;">
+                    style="width: 100%; height: auto; display: block; margin: 0 auto;">
             </div>
         </section>
 
         <!-- Section 2: Image 1 Output (Mission Section) -->
-        <section style="padding: 2rem 0 6rem; text-align: center; background: #fff;">
+        <section style="padding: 6rem 0 6rem; text-align: center; background: #fff;">
             <div class="container">
                 <h1
-                    style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; color: #1a202c;">
+                    style="font-size: 2.8rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; color: #1a202c;">
                     Transforming Urban Deliveries into a <br />
                     <span style="color: #00874e;">Clean Mobility Ecosystem</span>
                 </h1>
                 <p
-                    style="font-size: 1.1rem; max-width: 800px; margin: 0 auto 2.5rem; color: #64748b; line-height: 1.6;">
+                    style="font-size: 1.15rem; max-width: 900px; margin: 0 auto 2.5rem; color: #64748b; line-height: 1.4; font-weight: 500;">
                     Scalable and customized logistics solutions for B2B and B2C enterprises, encompassing Mid Mile
-                    movement, Last mile delievery, third-party logistics and hyper-local distrribution services.
+                    movement, Last-mile delivery, and hyper-local distribution services.
                 </p>
                 <div style="display: flex; justify-content: center; gap: 1rem;">
                     <a href="/about" class="btn"
@@ -36,7 +36,7 @@
         <!-- Section 3: Driving Future Logistics -->
         <section class="section bg-light py-5">
             <div class="container">
-                <h2 class="text-center mb-5" style="font-size: 2.5rem; font-weight: 800;">Driving Future
+                <h2 class="text-center mb-5" style="font-size: 2.8rem; font-weight: 900; color: #1e293b;">Driving Future
                     EV Logistics</h2>
                 <div class="row g-4">
                     <div class="col-md-4">
@@ -64,107 +64,179 @@
             </div>
         </section>
 
-        <!-- Section 4: Image 2 Output (Logistics Solutions We Offer) -->
-        <section class="section" style="background-color: #fff; padding: 5rem 0;">
+        <!-- Section 4: Logistics Solutions We Offer (Staggered Layout) -->
+        <section class="section" style="background-color: #9bcf5a; padding: 6rem 0; overflow: hidden;">
             <div class="container">
-                <div style="text-align: center; margin-bottom: 4rem;">
-                    <h2 style="font-size: 2.2rem; font-weight: 900; margin-bottom: 1rem; text-transform: uppercase;">
-                        <span style="color: #00874e;">LOGISTICS SOLUTIONS</span> WE OFFER
+                <div style="text-align: center; margin-bottom: 5rem;">
+                    <h2
+                        style="font-size: 2.8rem; font-weight: 900; color: #ffffff; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; text-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        Logistics Solutions <span style="color: #00874e;">We Offer</span>
                     </h2>
-                    <p style="color: #64748b; max-width: 800px; margin: 0 auto; line-height: 1.6; font-size: 0.95rem;">
-                        From streamlined order fulfilment to reliable delivery services, EonMove provides comprehensive
-                        logistics services tailored to meet your business needs.
+
+                    <p
+                        style="color: #000000; max-width: 850px; margin: 0 auto; font-size: 1.15rem; font-weight: 600; line-height: 1.4;">
+                        Scalable and customized logistics solutions tailored to meet your business needs, powered by
+                        100% electric efficiency.
                     </p>
                 </div>
 
-                <div class="row g-4">
-                    <!-- Primary Logistics -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card h-100 border-radius-12 p-4 text-start" style="border: 1px solid #e2e8f0;">
-                            <div
-                                style="background-color: #f0fdf4; border-radius: 12px; height: 100px; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-bottom: 1.5rem;">
-                                <div style="color: #00874e; font-size: 0.6rem; font-weight: 800; margin-bottom: 8px;">EV
-                                    FLEET SOLUTIONS</div>
-                                <div style="display: flex; gap: 8px; color: #00874e;">
-                                    <i data-lucide="truck" size="24"></i>
-                                    <i data-lucide="truck" size="24"></i>
-                                    <i data-lucide="truck" size="24"></i>
+                <div class="logistics-staggered-wrapper">
+                    <!-- Step 1 -->
+                    <div class="logistics-staggered-item step-1">
+                        <div class="logistics-number">1</div>
+                        <div class="logistics-content-card">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div>
+                                    <h3
+                                        style="color: #00874e; font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem;">
+                                        Electric Last-Mile Delivery (E-Commerce)</h3>
+                                    <p style="margin-bottom: 0; color: #4a5568; font-weight: 500;">Fast, reliable,
+                                        zero-emission deliveries optimized for quick commerce</p>
                                 </div>
+                                <i data-lucide="truck" size="28" color="#9bcf5a" style="opacity: 0.9;"></i>
                             </div>
-                            <div style="border-top: 1px dashed #e2e8f0; margin-bottom: 1.5rem;"></div>
-                            <h3 style="font-size: 1.1rem; font-weight: 900; margin-bottom: 0.5rem; color: #1a202c;">
-                                PRIMARY
-                                LOGISTICS</h3>
-                            <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1.5rem; min-height: 2.5rem;">
-                                Inter-Warehouse & Bulk Movement (Godown to Godown)</p>
-                            <ul
-                                style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.85rem; color: #4a5568;">
-                                <li style="display: flex; align-items: center; gap: 10px;"><i data-lucide="check-circle"
-                                        size="14" color="#00874e"></i> Seamless Hub-to-Hub connectivity</li>
-                                <li style="display: flex; align-items: center; gap: 10px;"><i data-lucide="check-circle"
-                                        size="14" color="#00874e"></i> High-capacity Electric Trucks</li>
-                                <li style="display: flex; align-items: center; gap: 10px;"><i data-lucide="check-circle"
-                                        size="14" color="#00874e"></i> Efficient bulk goods transfer</li>
-                                <li style="display: flex; align-items: center; gap: 10px;"><i data-lucide="check-circle"
-                                        size="14" color="#00874e"></i> Scheduled inter-facility transport</li>
-                            </ul>
                         </div>
                     </div>
 
-                    <!-- Secondary Distribution -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card h-100 border-radius-12 p-4 text-start" style="border: 1px solid #e2e8f0;">
-                            <div
-                                style="background-color: #ebf8ff; border-radius: 12px; height: 100px; display: flex; justify-content: center; align-items: center; margin-bottom: 1.5rem;">
-                                <i data-lucide="warehouse" size="40" color="#3182ce"></i>
+                    <!-- Step 2 -->
+                    <div class="logistics-staggered-item step-2">
+                        <div class="logistics-number">2</div>
+                        <div class="logistics-content-card">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div>
+                                    <h3
+                                        style="color: #00874e; font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem;">
+                                        Dedicated EV Cargo Fleets</h3>
+                                    <p style="margin-bottom: 0; color: #4a5568; font-weight: 500;">Custom-built electric
+                                        fleets exclusively for enterprise logistics needs.</p>
+                                </div>
+                                <i data-lucide="warehouse" size="28" color="#9bcf5a" style="opacity: 0.9;"></i>
                             </div>
-                            <div style="border-top: 1px dashed #e2e8f0; margin-bottom: 1.5rem;"></div>
-                            <h3 style="font-size: 1.1rem; font-weight: 900; margin-bottom: 0.5rem; color: #1a202c;">
-                                SECONDARY DISTRIBUTION</h3>
-                            <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1.5rem; min-height: 2.5rem;">
-                                Warehouse to Retail Distribution (Godown to Shops)</p>
-                            <ul
-                                style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.85rem; color: #4a5568;">
-                                <li style="display: flex; align-items: center; gap: 10px;"><i data-lucide="check-circle"
-                                        size="14" color="#00874e"></i> Godown to local distribution points</li>
-                                <li style="display: flex; align-items: center; gap: 10px;"><i data-lucide="check-circle"
-                                        size="14" color="#00874e"></i> Retail store replenishment</li>
-                                <li style="display: flex; align-items: center; gap: 10px;"><i data-lucide="check-circle"
-                                        size="14" color="#00874e"></i> Reliable Enterprise supply chain solutions</li>
-                                <li style="display: flex; align-items: center; gap: 10px;"><i data-lucide="check-circle"
-                                        size="14" color="#00874e"></i> Replacing traditional LCVs with Green EVs</li>
-                            </ul>
                         </div>
                     </div>
 
-                    <!-- Dedicated Fleet -->
-                    <div class="col-lg-4 col-md-12">
-                        <div class="card h-100 border-radius-12 p-4 text-start" style="border: 1px solid #e2e8f0;">
-                            <div
-                                style="background-color: #fff5f5; border-radius: 12px; height: 100px; display: flex; justify-content: center; align-items: center; margin-bottom: 1.5rem;">
-                                <i data-lucide="zap" size="40" color="#e53e3e"></i>
+                    <!-- Step 3 -->
+                    <div class="logistics-staggered-item step-3">
+                        <div class="logistics-number">3</div>
+                        <div class="logistics-content-card">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div>
+                                    <h3
+                                        style="color: #00874e; font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem;">
+                                        Urban & Intra-City Logistics</h3>
+                                    <p style="margin-bottom: 0; color: #4a5568; font-weight: 500;">Efficient city
+                                        logistics designed for high-frequency, short-haul movement.</p>
+                                </div>
+                                <i data-lucide="building-2" size="28" color="#9bcf5a" style="opacity: 0.9;"></i>
                             </div>
-                            <div style="border-top: 1px dashed #e2e8f0; margin-bottom: 1.5rem;"></div>
-                            <h3 style="font-size: 1.1rem; font-weight: 900; margin-bottom: 0.5rem; color: #1a202c;">
-                                DEDICATED ENTERPRISE FLEET</h3>
-                            <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 1.5rem; min-height: 2.5rem;">
-                                Customized Enterprise Logistics Solutions</p>
-                            <ul
-                                style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.85rem; color: #4a5568;">
-                                <li style="display: flex; align-items: center; gap: 10px;"><i data-lucide="check-circle"
-                                        size="14" color="#00874e"></i> Dedicated electric trucks for businesses</li>
-                                <li style="display: flex; align-items: center; gap: 10px;"><i data-lucide="check-circle"
-                                        size="14" color="#00874e"></i> Scheduled & On-demand bulk transport</li>
-                                <li style="display: flex; align-items: center; gap: 10px;"><i data-lucide="check-circle"
-                                        size="14" color="#00874e"></i> Zero-emission fleet for corporate sustainability
-                                </li>
-                                <li style="display: flex; align-items: center; gap: 10px;"><i data-lucide="check-circle"
-                                        size="14" color="#00874e"></i> Optimized for FMCG, Pharma & Retail sectors</li>
-                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="logistics-staggered-item step-4">
+                        <div class="logistics-number">4</div>
+                        <div class="logistics-content-card">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <div>
+                                    <h3
+                                        style="color: #00874e; font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem;">
+                                        End-to-End Fleet & Delivery Management</h3>
+                                    <p style="margin-bottom: 0; color: #4a5568; font-weight: 500;">Complete control—from
+                                        vehicles and drivers to routing, tracking, and performance.</p>
+                                </div>
+                                <i data-lucide="map-pin" size="28" color="#9bcf5a" style="opacity: 0.9;"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <style>
+                .logistics-staggered-wrapper {
+                    max-width: 1000px;
+                    margin: 0 auto;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5rem;
+                    position: relative;
+                }
+
+                .logistics-staggered-item {
+                    display: flex;
+                    align-items: center;
+                    gap: 25px;
+                    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+                }
+
+                .logistics-number {
+                    width: 70px;
+                    height: 70px;
+                    background: #ffffff;
+                    color: #00874e;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.8rem;
+                    font-weight: 900;
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+                    flex-shrink: 0;
+                    border: 4px solid #9bcf5a;
+                    position: relative;
+                    z-index: 2;
+                }
+
+                .logistics-content-card {
+                    background: #ffffff;
+                    padding: 1.8rem 2.5rem;
+                    border-radius: 12px 12px 12px 12px;
+                    flex-grow: 1;
+                    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+                    border-left: 10px solid #40b8ea;
+                    max-width: 750px;
+                }
+
+                /* Staggering effects for Desktop */
+                @media (min-width: 992px) {
+                    .step-1 {
+                        margin-left: 0;
+                    }
+
+                    .step-2 {
+                        margin-left: 8%;
+                    }
+
+                    .step-3 {
+                        margin-left: 16%;
+                    }
+
+                    .step-4 {
+                        margin-left: 24%;
+                    }
+                }
+
+                /* Mobile refinement */
+                @media (max-width: 991px) {
+                    .logistics-staggered-item {
+                        gap: 15px;
+                    }
+
+                    .logistics-number {
+                        width: 55px;
+                        height: 55px;
+                        font-size: 1.4rem;
+                        border-width: 3px;
+                    }
+
+                    .logistics-content-card {
+                        padding: 1.2rem 1.5rem;
+                    }
+                }
+
+                .logistics-staggered-item:hover {
+                    transform: scale(1.02) translateX(10px);
+                }
+            </style>
         </section>
         <!-- Section: Fleet Showcase -->
         <section style="padding: 4rem 0; background: #fff;">
@@ -209,15 +281,16 @@
         </section>
 
 
-        <!-- Section: Inquiry & Contact -->
-        <section class="inquiry-contact-section">
+        <!-- Contact Section with reduced bottom gap -->
+        <section class="inquiry-contact-section" style="padding-bottom: 2rem;">
             <div class="contact-green-band"></div>
             <div class="container">
                 <div class="row align-items-center position-relative" style="z-index: 2;">
                     <!-- Left: Form -->
                     <div class="col-lg-6 mb-4 mb-lg-0">
                         <div class="enquiry-form-card">
-                            <h2>Enquiry Form</h2>
+                            <h2 style="font-size: 2.8rem; font-weight: 900; color: #1e293b; margin-bottom: 2rem;">
+                                Enquiry Form</h2>
                             <form action="#">
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
@@ -269,7 +342,8 @@
                     <!-- Right: Contact Info -->
                     <div class="col-lg-6 ps-lg-5 text-lg-start text-center">
                         <div class="contact-info-side">
-                            <h2 class="mb-5">Get In Touch</h2>
+                            <h2 style="font-size: 2.8rem; font-weight: 900; color: #1e293b; margin-bottom: 2.5rem;">Get
+                                In Touch</h2>
                             <div class="contact-details">
                                 <div class="contact-item mb-4 d-flex align-items-start gap-3">
                                     <i data-lucide="map-pin" size="28"></i>
@@ -294,15 +368,6 @@
             </div>
         </section>
 
-        <!-- Section: Partner CTA -->
-        <section class="partner-btn-container">
-            <div class="container">
-                <a href="/contact" class="partner-btn" style="display: inline-flex; align-items: center; gap: 15px;">
-
-                    <span>Partner With Us</span>
-                </a>
-            </div>
-        </section>
     </main>
 
     <!-- Thank You Popup Modal -->

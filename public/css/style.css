@@ -148,8 +148,8 @@ p {
     top: 0;
     left: 0;
     right: 0;
-    background: #ffffff;
-    /* Changed to white by default */
+    background: transparent;
+    /* Default transparent */
     transition: all 0.3s ease;
     z-index: 1000;
     padding: 0.4rem 0;
@@ -195,7 +195,8 @@ p {
 
 /* Color handling for tagline */
 .navbar:not(.scrolled) .logo-tagline {
-    color: var(--primary);
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .navbar.scrolled .logo-tagline {
@@ -222,7 +223,8 @@ p {
 
 /* Initially white text on transparent navbar for clarity over banners */
 .navbar:not(.scrolled) .nav-links .nav-link {
-    color: var(--text-main);
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* Scrolled state uses dark text */
@@ -237,10 +239,13 @@ p {
 
 /* Navbar Toggler Styling */
 .navbar-toggler {
-    border-color: rgba(0, 0, 0, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
     padding: 0.5rem;
 }
 
+.navbar:not(.scrolled) .navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
 
 .navbar.scrolled .navbar-toggler {
     border-color: var(--border);

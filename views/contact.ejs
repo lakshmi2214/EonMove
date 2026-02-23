@@ -31,73 +31,82 @@
 
                     <form id="partnershipForm" style="position: relative; z-index: 2;">
                         <!-- Row 1: Name and Mobile -->
-                        <div class="form-row"
-                            style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
-                            <div class="form-group">
-                                <label
-                                    style="display: block; margin-bottom: 0.8rem; font-weight: 700; color: #1e293b;">Full
-                                    Name</label>
-                                <input type="text" placeholder="Your Name" required
-                                    style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; transition: all 0.3s ease;">
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-6">
+                                <div class="form-group text-start">
+                                    <label
+                                        style="display: block; margin-bottom: 0.8rem; font-weight: 700; color: #1e293b;">Full
+                                        Name</label>
+                                    <input type="text" class="form-control" placeholder="Your Name" required
+                                        style="padding: 1rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem;">
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label
-                                    style="display: block; margin-bottom: 0.8rem; font-weight: 700; color: #1e293b;">Mobile
-                                    Number</label>
-                                <input type="tel" pattern="[0-9]{10}"
-                                    title="Please enter a valid 10-digit mobile number"
-                                    placeholder="10-digit Mobile Number" required
-                                    style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem;">
+                            <div class="col-md-6">
+                                <div class="form-group text-start">
+                                    <label
+                                        style="display: block; margin-bottom: 0.8rem; font-weight: 700; color: #1e293b;">Mobile
+                                        Number</label>
+                                    <input type="tel" class="form-control" pattern="[0-9]{10}"
+                                        title="Please enter a valid 10-digit mobile number" placeholder="Mobile Number"
+                                        required
+                                        style="padding: 1rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem;">
+                                </div>
                             </div>
                         </div>
 
                         <!-- Row 2: Mail-Id and Type -->
-                        <div class="form-row"
-                            style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
-                            <div class="form-group">
-                                <label
-                                    style="display: block; margin-bottom: 0.8rem; font-weight: 700; color: #1e293b;">Mail-Id</label>
-                                <input type="email" placeholder="example@domain.com" required
-                                    style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem;">
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-6">
+                                <div class="form-group text-start">
+                                    <label
+                                        style="display: block; margin-bottom: 0.8rem; font-weight: 700; color: #1e293b;">Mail-Id</label>
+                                    <input type="email" class="form-control" placeholder="example@domain.com" required
+                                        style="padding: 1rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem;">
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label
-                                    style="display: block; margin-bottom: 0.8rem; font-weight: 700; color: #1e293b;">Inquiry
-                                    Type</label>
-                                <select required
-                                    style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; background: white; cursor: pointer;">
-                                    <option value="" disabled selected>Choose an Option</option>
-                                    <option>Attach your EV</option>
-                                    <option>Work with driver partner</option>
-                                    <option>Media Enquiry</option>
-                                    <option>None of the Above</option>
-                                </select>
+                            <div class="col-md-6">
+                                <div class="form-group text-start">
+                                    <label
+                                        style="display: block; margin-bottom: 0.8rem; font-weight: 700; color: #1e293b;">Inquiry
+                                        Type</label>
+                                    <select class="form-select" required
+                                        style="padding: 1rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem;">
+                                        <option value="" disabled selected>Choose an Option</option>
+                                        <option>Attach your EV</option>
+                                        <option>Work with driver partner</option>
+                                        <option>Media Enquiry</option>
+                                        <option>None of the Above</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Row 3: State and City -->
-                        <div class="form-row"
-                            style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
-                            <div class="form-group">
-                                <label
-                                    style="display: block; margin-bottom: 0.8rem; font-weight: 700; color: #1e293b;">State</label>
-                                <input type="text" placeholder="Your State" required
-                                    style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem;">
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-6">
+                                <div class="form-group text-start">
+                                    <label
+                                        style="display: block; margin-bottom: 0.8rem; font-weight: 700; color: #1e293b;">State</label>
+                                    <input type="text" class="form-control" placeholder="Your State" required
+                                        style="padding: 1rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem;">
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label
-                                    style="display: block; margin-bottom: 0.8rem; font-weight: 700; color: #1e293b;">City</label>
-                                <input type="text" placeholder="Your City" required
-                                    style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem;">
+                            <div class="col-md-6">
+                                <div class="form-group text-start">
+                                    <label
+                                        style="display: block; margin-bottom: 0.8rem; font-weight: 700; color: #1e293b;">City</label>
+                                    <input type="text" class="form-control" placeholder="Your City" required
+                                        style="padding: 1rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem;">
+                                </div>
                             </div>
                         </div>
 
                         <!-- Row 4: How did you find EonMove -->
-                        <div class="form-group" style="margin-bottom: 3rem;">
+                        <div class="form-group text-start mb-5">
                             <label style="display: block; margin-bottom: 0.8rem; font-weight: 700; color: #1e293b;">How
                                 did you find EonMove?</label>
-                            <select required
-                                style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; background: white; cursor: pointer;">
+                            <select class="form-select" required
+                                style="padding: 1rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem;">
                                 <option value="" disabled selected>Select an option</option>
                                 <option>Google Search</option>
                                 <option>Website</option>

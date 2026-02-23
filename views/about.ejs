@@ -13,6 +13,89 @@
             </div>
         </section>
 
+        <!-- Section: Moving Clients Marquee -->
+        <section style="padding: 3rem 0; background: #f8fafc; overflow: hidden; border-bottom: 1px solid #e2e8f0;">
+            <div class="container-fluid">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h3
+                        style="font-size: 1.2rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 2px;">
+                        Our Trusted Clients</h3>
+                </div>
+
+                <div class="marquee-wrapper" style="position: relative; width: 100%; overflow: hidden;">
+                    <div class="marquee-content"
+                        style="display: flex; gap: 4rem; animation: scroll 30s linear infinite; width: max-content;">
+                        <!-- Client Logos - Placeholders for now -->
+                        <div class="client-logo-item"
+                            style="padding: 1rem 2rem; background: white; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; min-width: 151px;">
+                            <span style="font-weight: 700; color: #29abe2;">Client 1</span>
+                        </div>
+                        <div class="client-logo-item"
+                            style="padding: 1rem 2rem; background: white; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; min-width: 151px;">
+                            <span style="font-weight: 700; color: #9bcf5a;">Client 2</span>
+                        </div>
+                        <div class="client-logo-item"
+                            style="padding: 1rem 2rem; background: white; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; min-width: 151px;">
+                            <span style="font-weight: 700; color: #29abe2;">Client 3</span>
+                        </div>
+                        <div class="client-logo-item"
+                            style="padding: 1rem 2rem; background: white; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; min-width: 151px;">
+                            <span style="font-weight: 700; color: #9bcf5a;">Client 4</span>
+                        </div>
+                        <div class="client-logo-item"
+                            style="padding: 1rem 2rem; background: white; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; min-width: 151px;">
+                            <span style="font-weight: 700; color: #29abe2;">Client 5</span>
+                        </div>
+                        <div class="client-logo-item"
+                            style="padding: 1rem 2rem; background: white; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; min-width: 151px;">
+                            <span style="font-weight: 700; color: #9bcf5a;">Client 6</span>
+                        </div>
+                        <!-- Repeat for seamless scrolling -->
+                        <div class="client-logo-item"
+                            style="padding: 1rem 2rem; background: white; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; min-width: 151px;">
+                            <span style="font-weight: 700; color: #29abe2;">Client 1</span>
+                        </div>
+                        <div class="client-logo-item"
+                            style="padding: 1rem 2rem; background: white; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; min-width: 151px;">
+                            <span style="font-weight: 700; color: #9bcf5a;">Client 2</span>
+                        </div>
+                        <div class="client-logo-item"
+                            style="padding: 1rem 2rem; background: white; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; min-width: 151px;">
+                            <span style="font-weight: 700; color: #29abe2;">Client 3</span>
+                        </div>
+                        <div class="client-logo-item"
+                            style="padding: 1rem 2rem; background: white; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; min-width: 151px;">
+                            <span style="font-weight: 700; color: #9bcf5a;">Client 4</span>
+                        </div>
+                        <div class="client-logo-item"
+                            style="padding: 1rem 2rem; background: white; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; min-width: 151px;">
+                            <span style="font-weight: 700; color: #29abe2;">Client 5</span>
+                        </div>
+                        <div class="client-logo-item"
+                            style="padding: 1rem 2rem; background: white; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; min-width: 151px;">
+                            <span style="font-weight: 700; color: #9bcf5a;">Client 6</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(calc(-151px * 6 - 4rem * 6));
+                }
+            }
+
+            .marquee-content:hover {
+                animation-play-state: paused;
+            }
+        </style>
+
         <!-- Section: Vision & Mission -->
         <section style="padding: 6rem 0; border-bottom: 1px solid #e2e8f0;">
             <div class="container">

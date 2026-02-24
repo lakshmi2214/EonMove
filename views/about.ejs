@@ -14,49 +14,54 @@
         </section>
 
         <!-- Section: Moving Clients Marquee -->
-        <section style="padding: 3rem 0; background: #f8fafc; overflow: hidden; border-bottom: 1px solid #e2e8f0;">
+        <section class="clients-section">
             <div class="container-fluid">
                 <div style="text-align: center; margin-bottom: 2rem;">
-                    <h3
-                        style="font-size: 1.2rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 2px;">
-                        Our Trusted Clients</h3>
+                    <h3 class="clients-heading">Our Trusted Clients</h3>
                 </div>
 
-                <div class="marquee-wrapper" style="position: relative; width: 100%; overflow: hidden;">
-                    <div class="marquee-content"
-                        style="display: flex; gap: 4rem; animation: scroll 15s linear infinite; width: max-content;">
+                <div class="marquee-wrapper">
+                    <div class="marquee-content">
                         <!-- Client 1: CureFoods -->
-                        <div class="client-logo-item"
-                            style="padding: 1rem 2rem; background: white; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; min-width: 180px; height: 100px;">
-                            <img src="/images/curefoods.png" alt="CureFoods"
-                                style="max-width: 140px; max-height: 70px; object-fit: contain;">
+                        <div class="client-card">
+                            <div class="client-card-border"></div>
+                            <div class="client-card-inner">
+                                <img src="/images/curefoods.png" alt="CureFoods">
+                            </div>
                         </div>
                         <!-- Client 2: SendIt -->
-                        <div class="client-logo-item"
-                            style="padding: 1rem 2rem; background: white; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; min-width: 180px; height: 100px;">
-                            <img src="/images/sendit-logo-blue.png" alt="SendIt"
-                                style="max-width: 140px; max-height: 70px; object-fit: contain;">
+                        <div class="client-card">
+                            <div class="client-card-border"></div>
+                            <div class="client-card-inner">
+                                <img src="/images/sendit-logo-blue.png" alt="SendIt">
+                            </div>
                         </div>
                         <!-- Placeholder -->
-                        <div class="client-logo-item"
-                            style="padding: 1rem 2rem; background: white; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; min-width: 180px; height: 100px;">
-                            <span style="font-weight: 700; color: #94a3b8;">Partner Portfolio</span>
+                        <div class="client-card">
+                            <div class="client-card-border"></div>
+                            <div class="client-card-inner">
+                                <span class="client-placeholder">Partner Portfolio</span>
+                            </div>
                         </div>
 
                         <!-- Repeat for seamless scrolling -->
-                        <div class="client-logo-item"
-                            style="padding: 1rem 2rem; background: white; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; min-width: 180px; height: 100px;">
-                            <img src="/images/curefoods.png" alt="CureFoods"
-                                style="max-width: 140px; max-height: 70px; object-fit: contain;">
-                        </div>f
-                        <div class="client-logo-item"
-                            style="padding: 1rem 2rem; background: white; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; min-width: 180px; height: 100px;">
-                            <img src="/images/sendit-logo-blue.png" alt="SendIt"
-                                style="max-width: 140px; max-height: 70px; object-fit: contain;">
+                        <div class="client-card">
+                            <div class="client-card-border"></div>
+                            <div class="client-card-inner">
+                                <img src="/images/curefoods.png" alt="CureFoods">
+                            </div>
                         </div>
-                        <div class="client-logo-item"
-                            style="padding: 1rem 2rem; background: white; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; min-width: 180px; height: 100px;">
-                            <span style="font-weight: 700; color: #94a3b8;">Partner Portfolio</span>
+                        <div class="client-card">
+                            <div class="client-card-border"></div>
+                            <div class="client-card-inner">
+                                <img src="/images/sendit-logo-blue.png" alt="SendIt">
+                            </div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-card-border"></div>
+                            <div class="client-card-inner">
+                                <span class="client-placeholder">Partner Portfolio</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -64,7 +69,41 @@
         </section>
 
         <style>
-            @keyframes scroll {
+            /* Clients Section */
+            .clients-section {
+                padding: 3rem 0;
+                background: #f8fafc;
+                overflow: hidden;
+                border-bottom: 1px solid #e2e8f0;
+            }
+
+            .clients-heading {
+                font-size: 1.2rem;
+                font-weight: 700;
+                color: #64748b;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+
+            /* Marquee */
+            .marquee-wrapper {
+                position: relative;
+                width: 100%;
+                overflow: hidden;
+            }
+
+            .marquee-content {
+                display: flex;
+                gap: 3rem;
+                animation: clientScroll 18s linear infinite;
+                width: max-content;
+            }
+
+            .marquee-content:hover {
+                animation-play-state: paused;
+            }
+
+            @keyframes clientScroll {
                 0% {
                     transform: translateX(0);
                 }
@@ -74,8 +113,90 @@
                 }
             }
 
-            .marquee-content:hover {
-                animation-play-state: paused;
+            /* Client Card with animated border */
+            .client-card {
+                position: relative;
+                min-width: 200px;
+                height: 110px;
+                border-radius: 16px;
+                padding: 3px;
+                overflow: hidden;
+                flex-shrink: 0;
+            }
+
+            /* Spinning gradient border */
+            .client-card-border {
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: conic-gradient(#9bcf5a,
+                        #29abe2,
+                        #00874e,
+                        #40b8ea,
+                        #9bcf5a);
+                animation: spinBorder 3s linear infinite;
+                z-index: 0;
+            }
+
+            @keyframes spinBorder {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+            /* Inner card — transparent so logo colors show */
+            .client-card-inner {
+                position: relative;
+                z-index: 1;
+                background: #ffffff;
+                border-radius: 13px;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 1rem 1.5rem;
+            }
+
+            .client-card-inner img {
+                max-width: 140px;
+                max-height: 65px;
+                object-fit: contain;
+                filter: none;
+                transition: transform 0.3s ease;
+            }
+
+            .client-card:hover .client-card-inner img {
+                transform: scale(1.08);
+            }
+
+            .client-placeholder {
+                font-weight: 700;
+                color: #94a3b8;
+                font-size: 0.95rem;
+            }
+
+            /* Mobile */
+            @media (max-width: 768px) {
+                .client-card {
+                    min-width: 160px;
+                    height: 90px;
+                }
+
+                .marquee-content {
+                    gap: 2rem;
+                }
+
+                .client-card-inner img {
+                    max-width: 110px;
+                    max-height: 55px;
+                }
             }
         </style>
 
@@ -90,37 +211,32 @@
 
                 <div style="max-width: 900px; margin: 0 auto;">
                     <div class="row g-4 justify-content-center">
-                        <!-- Vision Section -->
+                        <!-- Vision Card -->
                         <div class="col-md-6">
-                            <div
-                                style="background: #29abe2; padding: 2.5rem 2rem; border-radius: 25px; border: 3px solid #fff; box-shadow: 0 15px 30px rgba(41,171,226,0.12); height: 100%; color: white;">
-                                <div
-                                    style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: white; border-radius: 50%; margin-bottom: 1.5rem;">
-                                    <i data-lucide="eye" style="color: #29abe2; width: 20px; height: 20px;"></i>
+                            <div class="vm-card vm-vision">
+                                <div class="vm-border-decor"></div>
+                                <div class="vm-icon-circle">
+                                    <i data-lucide="eye" style="color: #29abe2; width: 22px; height: 22px;"></i>
                                 </div>
-                                <h3 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 1rem; color: white;">Our
-                                    Vision</h3>
-                                <p style="font-size: 1rem; line-height: 1.6; color: white; margin-bottom: 0;">
+                                <h3 class="vm-heading">Our Vision</h3>
+                                <p class="vm-text">
                                     To lead the global transition to sustainable urban logistics by becoming the most
                                     reliable and green EV ecosystem provider in India.
                                 </p>
                             </div>
                         </div>
 
-                        <!-- Mission Section -->
+                        <!-- Mission Card -->
                         <div class="col-md-6">
-                            <div
-                                style="background: #9bcf5a; padding: 2.5rem 2rem; border-radius: 25px; border: 3px solid #fff; box-shadow: 0 15px 30px rgba(155,207,90,0.12); height: 100%; color: white;">
-                                <div
-                                    style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: white; border-radius: 50%; margin-bottom: 1.5rem;">
-                                    <i data-lucide="target" style="color: #9bcf5a; width: 20px; height: 20px;"></i>
+                            <div class="vm-card vm-mission">
+                                <div class="vm-border-decor"></div>
+                                <div class="vm-icon-circle">
+                                    <i data-lucide="target" style="color: #9bcf5a; width: 22px; height: 22px;"></i>
                                 </div>
-                                <h3 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 1rem; color: white;">Our
-                                    Mission</h3>
-                                <p style="font-size: 1rem; line-height: 1.6; color: white; margin-bottom: 0;">
+                                <h3 class="vm-heading">Our Mission</h3>
+                                <p class="vm-text">
                                     To provide seamless, tech-enabled, and zero-emission logistics solutions that
-                                    empower
-                                    businesses to grow while protecting our environment.
+                                    empower businesses to grow while protecting our environment.
                                 </p>
                             </div>
                         </div>
@@ -128,6 +244,112 @@
                 </div>
             </div>
         </section>
+
+        <style>
+            /* Vision & Mission Cards */
+            .vm-card {
+                padding: 2.5rem 2rem;
+                border-radius: 25px;
+                height: 100%;
+                color: white;
+                position: relative;
+                overflow: hidden;
+                transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                    box-shadow 0.4s ease;
+                cursor: default;
+            }
+
+            .vm-vision {
+                background: linear-gradient(135deg, #29abe2, #2196c9);
+                border: 3px solid rgba(255, 255, 255, 0.35);
+                box-shadow: 0 12px 30px rgba(41, 171, 226, 0.2);
+            }
+
+            .vm-mission {
+                background: linear-gradient(135deg, #9bcf5a, #7cb842);
+                border: 3px solid rgba(255, 255, 255, 0.35);
+                box-shadow: 0 12px 30px rgba(155, 207, 90, 0.2);
+            }
+
+            /* Decorative inner dashed border */
+            .vm-border-decor {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+                border: 2px dashed rgba(255, 255, 255, 0.25);
+                border-radius: 18px;
+                pointer-events: none;
+                transition: border-color 0.4s ease, transform 0.4s ease;
+            }
+
+            /* Hover effects */
+            .vm-card:hover {
+                transform: translateY(-10px) scale(1.03);
+            }
+
+            .vm-vision:hover {
+                box-shadow: 0 20px 50px rgba(41, 171, 226, 0.35),
+                    0 0 20px rgba(41, 171, 226, 0.15);
+            }
+
+            .vm-mission:hover {
+                box-shadow: 0 20px 50px rgba(155, 207, 90, 0.35),
+                    0 0 20px rgba(155, 207, 90, 0.15);
+            }
+
+            .vm-card:hover .vm-border-decor {
+                border-color: rgba(255, 255, 255, 0.5);
+                transform: scale(0.98);
+            }
+
+            /* Icon circle */
+            .vm-icon-circle {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 55px;
+                height: 55px;
+                background: white;
+                border-radius: 50%;
+                margin-bottom: 1.5rem;
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+                transition: transform 0.4s ease, box-shadow 0.4s ease;
+            }
+
+            .vm-card:hover .vm-icon-circle {
+                transform: scale(1.1) rotate(5deg);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            }
+
+            /* Heading */
+            .vm-heading {
+                font-size: 1.8rem;
+                font-weight: 800;
+                margin-bottom: 1rem;
+                color: white;
+            }
+
+            /* Text */
+            .vm-text {
+                font-size: 1rem;
+                line-height: 1.7;
+                color: rgba(255, 255, 255, 0.92);
+                margin-bottom: 0;
+            }
+
+            /* Mobile */
+            @media (max-width: 768px) {
+                .vm-card {
+                    padding: 2rem 1.5rem;
+                }
+
+                .vm-heading {
+                    font-size: 1.5rem;
+                }
+            }
+        </style>
 
         <!-- Section 3: High Quality Experience -->
         <section style="padding: 8rem 0; background: #f8fafc;">
@@ -188,8 +410,8 @@
             </div>
         </section>
 
-        <!-- Section 4: Our Leadership -->
-        <section style="padding: 8rem 0; background: #ffffff; position: relative; overflow: hidden;">
+        <!-- Section 4: Our Leadership (Zig-Zag Layout) -->
+        <section style="padding: 6rem 0; background: #ffffff; position: relative; overflow: hidden;">
             <div class="container" style="position: relative; z-index: 2;">
                 <div style="text-align: center; margin-bottom: 5rem;">
                     <h2 style="font-size: 3.5rem; font-weight: 950; color: #1e293b; letter-spacing: -1px;">Our
@@ -200,69 +422,249 @@
                     </div>
                 </div>
 
-                <div style="max-width: 1100px; margin: 0 auto;">
-                    <div class="row g-4 justify-content-center">
-                        <!-- Column 1 -->
-                        <div class="col-lg-4 col-md-6 d-flex justify-content-center">
-                            <div class="h-100 leadership-card"
-                                style="background: #ffffff; padding: 2rem; border-radius: 35px; border: 4px solid rgba(155, 207, 90, 0.4); box-shadow: 0 20px 40px rgba(155, 207, 90, 0.15), 0 0 15px rgba(155, 207, 90, 0.1); transition: all 0.4s ease; max-width: 340px;">
-                                <div
-                                    style="width: 100%; aspect-ratio: 1/1; border-radius: 20px; overflow: hidden; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
-                                    <img src="/images/srikanth sir.jpg" alt="Founder"
-                                        style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
-                                </div>
-                                <h4 style="font-size: 1.5rem; font-weight: 900; color: #1e293b; margin-bottom: 10px;">
-                                    Co-Founder Name</h4>
-                                <p style="font-size: 0.95rem; color: #64748b; line-height: 1.7; font-weight: 500;">
-                                    Expert in sustainable logistics and EV technology integration. Leading the strategic
-                                    outreach and partnership initiatives at EonMove.
-                                </p>
-                            </div>
-                        </div>
+                <div class="zigzag-leadership-wrapper">
 
-                        <!-- Column 2 -->
-                        <div class="col-lg-4 col-md-6 d-flex justify-content-center">
-                            <div class="h-100 leadership-card"
-                                style="background: #ffffff; padding: 2rem; border-radius: 35px; border: 4px solid rgba(155, 207, 90, 0.4); box-shadow: 0 20px 40px rgba(155, 207, 90, 0.15), 0 0 15px rgba(155, 207, 90, 0.1); transition: all 0.4s ease; max-width: 340px;">
-                                <div
-                                    style="width: 100%; aspect-ratio: 1/1; border-radius: 20px; overflow: hidden; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
-                                    <img src="/images/founder 2.jpeg" alt="Founder"
-                                        style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
-                                </div>
-                                <h4 style="font-size: 1.5rem; font-weight: 900; color: #1e293b; margin-bottom: 10px;">
-                                    Co-Founder Name</h4>
-                                <p style="font-size: 0.95rem; color: #64748b; line-height: 1.7; font-weight: 500;">
-                                    Driving the technological core of TRACKK, ensuring seamless real-time visibility and
-                                    efficiency for our entire electric fleet operations.
-                                </p>
-                            </div>
+                    <!-- Founder 1: Text LEFT, Image RIGHT -->
+                    <div class="zigzag-row">
+                        <div class="zigzag-text">
+                            <div class="zigzag-role-badge">Co-Founder</div>
+                            <h3 class="zigzag-name">Co-Founder Name</h3>
+                            <p class="zigzag-desc">
+                                Expert in sustainable logistics and EV technology integration. Leading the strategic
+                                outreach and partnership initiatives at EonMove.
+                            </p>
+                            <div class="zigzag-accent-line"></div>
                         </div>
-
-                        <!-- Column 3 -->
-                        <div class="col-lg-4 col-md-6 d-flex justify-content-center">
-                            <div class="h-100 leadership-card"
-                                style="background: #ffffff; padding: 2rem; border-radius: 35px; border: 4px solid rgba(155, 207, 90, 0.4); box-shadow: 0 20px 40px rgba(155, 207, 90, 0.15), 0 0 15px rgba(155, 207, 90, 0.1); transition: all 0.4s ease; max-width: 340px;">
-                                <div
-                                    style="width: 100%; aspect-ratio: 1/1; border-radius: 20px; overflow: hidden; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
-                                    <img src="/images/founder 3.jpeg" alt="Founder"
-                                        style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
-                                </div>
-                                <h4 style="font-size: 1.5rem; font-weight: 900; color: #1e293b; margin-bottom: 10px;">
-                                    Co-Founder Name</h4>
-                                <p style="font-size: 0.95rem; color: #64748b; line-height: 1.7; font-weight: 500;">
-                                    Focused on operational excellence and driver-partner growth, creating a supportive
-                                    ecosystem that empowers our workforce.
-                                </p>
+                        <div class="zigzag-image-wrapper">
+                            <div class="zigzag-image-card">
+                                <img src="/images/srikanth sir.jpg" alt="Co-Founder">
                             </div>
+                            <div class="zigzag-bg-shape"></div>
                         </div>
                     </div>
+
+                    <!-- Founder 2: Image LEFT, Text RIGHT (reversed) -->
+                    <div class="zigzag-row zigzag-reverse">
+                        <div class="zigzag-text">
+                            <div class="zigzag-role-badge">Co-Founder</div>
+                            <h3 class="zigzag-name">Co-Founder Name</h3>
+                            <p class="zigzag-desc">
+                                Driving the technological core of TRACKK, ensuring seamless real-time visibility and
+                                efficiency for our entire electric fleet operations.
+                            </p>
+                            <div class="zigzag-accent-line"></div>
+                        </div>
+                        <div class="zigzag-image-wrapper">
+                            <div class="zigzag-image-card">
+                                <img src="/images/founder 2.jpeg" alt="Co-Founder">
+                            </div>
+                            <div class="zigzag-bg-shape"></div>
+                        </div>
+                    </div>
+
+                    <!-- Founder 3: Text LEFT, Image RIGHT -->
+                    <div class="zigzag-row">
+                        <div class="zigzag-text">
+                            <div class="zigzag-role-badge">Co-Founder</div>
+                            <h3 class="zigzag-name">Co-Founder Name</h3>
+                            <p class="zigzag-desc">
+                                Focused on operational excellence and driver-partner growth, creating a supportive
+                                ecosystem that empowers our workforce.
+                            </p>
+                            <div class="zigzag-accent-line"></div>
+                        </div>
+                        <div class="zigzag-image-wrapper">
+                            <div class="zigzag-image-card">
+                                <img src="/images/founder 3.jpeg" alt="Co-Founder">
+                            </div>
+                            <div class="zigzag-bg-shape"></div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-            <!-- Decorative Background Shape -->
+            <!-- Decorative Background Shapes -->
             <div
                 style="position: absolute; top: -100px; left: -100px; width: 400px; height: 400px; background: rgba(155,207,90,0.05); border-radius: 50%;">
             </div>
+            <div
+                style="position: absolute; bottom: -80px; right: -80px; width: 350px; height: 350px; background: rgba(41,171,226,0.04); border-radius: 50%;">
+            </div>
         </section>
+
+        <style>
+            /* Zig-Zag Leadership Layout */
+            .zigzag-leadership-wrapper {
+                max-width: 1050px;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                gap: 5rem;
+            }
+
+            .zigzag-row {
+                display: flex;
+                align-items: center;
+                gap: 4rem;
+            }
+
+            /* Reversed row: image on left, text on right */
+            .zigzag-row.zigzag-reverse {
+                flex-direction: row-reverse;
+            }
+
+            /* Text side */
+            .zigzag-text {
+                flex: 1;
+                min-width: 0;
+            }
+
+            .zigzag-role-badge {
+                display: inline-block;
+                background: #f0fdf4;
+                color: #00874e;
+                font-size: 0.8rem;
+                font-weight: 800;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                padding: 6px 18px;
+                border-radius: 50px;
+                border: 1.5px solid rgba(155, 207, 90, 0.5);
+                margin-bottom: 1.2rem;
+            }
+
+            .zigzag-name {
+                font-size: 2rem;
+                font-weight: 950;
+                color: #1e293b;
+                margin-bottom: 1rem;
+                line-height: 1.2;
+            }
+
+            .zigzag-desc {
+                font-size: 1.05rem;
+                color: #64748b;
+                line-height: 1.8;
+                font-weight: 500;
+                margin-bottom: 1.5rem;
+            }
+
+            .zigzag-accent-line {
+                height: 5px;
+                width: 60px;
+                background: linear-gradient(90deg, #9bcf5a, #29abe2);
+                border-radius: 10px;
+            }
+
+            /* Image side */
+            .zigzag-image-wrapper {
+                flex: 0 0 380px;
+                position: relative;
+            }
+
+            .zigzag-image-card {
+                position: relative;
+                z-index: 2;
+                background: #ffffff;
+                padding: 1rem;
+                border-radius: 30px;
+                border: 4px solid rgba(155, 207, 90, 0.4);
+                box-shadow: 0 20px 50px rgba(155, 207, 90, 0.15), 0 0 15px rgba(155, 207, 90, 0.08);
+                transition: transform 0.4s ease, box-shadow 0.4s ease;
+                overflow: hidden;
+            }
+
+            .zigzag-image-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 30px 60px rgba(155, 207, 90, 0.2), 0 0 20px rgba(155, 207, 90, 0.12);
+            }
+
+            .zigzag-image-card img {
+                width: 100%;
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
+                object-position: top;
+                border-radius: 22px;
+                display: block;
+            }
+
+            .zigzag-bg-shape {
+                position: absolute;
+                top: 15px;
+                right: -15px;
+                width: 100%;
+                height: 100%;
+                background: rgba(155, 207, 90, 0.08);
+                border-radius: 30px;
+                z-index: 1;
+                transform: rotate(3deg);
+                pointer-events: none;
+            }
+
+            .zigzag-reverse .zigzag-bg-shape {
+                right: auto;
+                left: -15px;
+                transform: rotate(-3deg);
+            }
+
+            /* Responsive: tablet */
+            @media (max-width: 992px) {
+                .zigzag-row {
+                    gap: 2.5rem;
+                }
+
+                .zigzag-image-wrapper {
+                    flex: 0 0 300px;
+                }
+
+                .zigzag-name {
+                    font-size: 1.7rem;
+                }
+            }
+
+            /* Responsive: mobile — stack vertically */
+            @media (max-width: 768px) {
+                .zigzag-leadership-wrapper {
+                    gap: 3.5rem;
+                }
+
+                .zigzag-row,
+                .zigzag-row.zigzag-reverse {
+                    flex-direction: column;
+                    text-align: center;
+                }
+
+                .zigzag-image-wrapper {
+                    flex: 0 0 auto;
+                    width: 100%;
+                    max-width: 320px;
+                    margin: 0 auto;
+                }
+
+                .zigzag-text {
+                    order: 2;
+                }
+
+                .zigzag-image-wrapper {
+                    order: 1;
+                }
+
+                .zigzag-accent-line {
+                    margin: 0 auto;
+                }
+
+                .zigzag-bg-shape,
+                .zigzag-reverse .zigzag-bg-shape {
+                    right: -10px;
+                    left: auto;
+                    transform: rotate(2deg);
+                }
+
+                .zigzag-name {
+                    font-size: 1.5rem;
+                }
+            }
+        </style>
     </main>
 
     <style>

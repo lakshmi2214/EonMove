@@ -239,12 +239,49 @@
             </style>
         </section>
         <!-- Section: Fleet Showcase -->
-        <section style="padding: 4rem 0; background: #fff;">
-            <div class="container">
-                <img src="/images/IMG-20260220-WA0001.jpg" alt="EonMove Fleet"
-                    style="width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+        <section class="fleet-showcase-section">
+            <div class="fleet-showcase-inner">
+                <img src="/images/IMG-20260220-WA0001.jpg" alt="EonMove Fleet" class="fleet-showcase-img">
             </div>
         </section>
+
+        <style>
+            .fleet-showcase-section {
+                padding: 4rem 0;
+                background: #fff;
+            }
+
+            .fleet-showcase-inner {
+                max-width: 1320px;
+                margin: 0 auto;
+                padding: 0 1.5rem;
+            }
+
+            .fleet-showcase-img {
+                width: 100%;
+                height: auto;
+                display: block;
+                border-radius: 20px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Mobile: remove container padding so image fills edge-to-edge */
+            @media (max-width: 768px) {
+                .fleet-showcase-section {
+                    padding: 2rem 0;
+                }
+
+                .fleet-showcase-inner {
+                    padding: 0;
+                }
+
+                .fleet-showcase-img {
+                    border-radius: 0;
+                    box-shadow: none;
+                    width: 100%;
+                }
+            }
+        </style>
 
         <!-- Section 5: Our EV Ecosystem Solutions -->
         <section class="section ecosystem-section" style="background: #fff; padding: 6rem 0;">

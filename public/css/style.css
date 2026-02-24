@@ -690,8 +690,53 @@ p {
         grid-template-columns: 1fr;
     }
 
+    /* Switch to vertical layout on mobile instead of hiding */
     .ecosystem-timeline-container {
+        display: block;
+        padding-top: 2rem;
+    }
+
+    .ecosystem-timeline-line {
         display: none;
+        /* hide horizontal dashed line */
+    }
+
+    .ecosystem-timeline-points {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        width: 100%;
+        padding-left: 1.5rem;
+        border-left: 3px solid #00874e;
+    }
+
+    .timeline-point {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        text-align: left;
+        padding: 1rem 0;
+        gap: 1rem;
+        position: relative;
+    }
+
+    .timeline-dot {
+        width: 22px;
+        height: 22px;
+        min-width: 22px;
+        margin-bottom: 0;
+        margin-left: -23px;
+        /* align dot on the left border line */
+        box-shadow: 0 0 0 4px #f0fdf4;
+    }
+
+    .timeline-label {
+        font-size: 1rem;
+        color: #1e293b;
+        font-weight: 700;
     }
 }
 

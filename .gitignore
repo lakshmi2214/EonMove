@@ -25,3 +25,16 @@ dist-ssr
 
 .vercel
 .env*.local
+
+# Sensitive credentials
+google-credentials.json
+
+# Data files
+backup_submissions.json
+*.xlsx
+
+# Diagnostic and debug scripts
+debug_*.js
+diag_*.txt
+diagnostic.js
+debug_output.txt

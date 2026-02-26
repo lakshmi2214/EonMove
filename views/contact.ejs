@@ -15,7 +15,7 @@
                     <h2 style="font-size: 2.8rem; font-weight: 900; color: #1e293b; margin-bottom: 1rem;">Contact Us
                     </h2>
                     <p style="color: #64748b; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Join hands with
-                        EonMove to revolutionize sustainable urban logistics. Fill out the form below to get started.
+                        EpnMove to revolutionize sustainable urban logistics. Fill out the form below to get started.
                     </p>
                 </div>
 
@@ -37,7 +37,7 @@
                                     <label
                                         style="display: block; margin-bottom: 0.8rem; font-weight: 700; color: #1e293b;">Full
                                         Name</label>
-                                    <input type="text" class="form-control" placeholder="Your Name" required
+                                    <input type="text" name="name" class="form-control" placeholder="Your Name" required
                                         style="padding: 1rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem;">
                                 </div>
                             </div>
@@ -46,7 +46,7 @@
                                     <label
                                         style="display: block; margin-bottom: 0.8rem; font-weight: 700; color: #1e293b;">Mobile
                                         Number</label>
-                                    <input type="tel" class="form-control" pattern="[0-9]{10}"
+                                    <input type="tel" name="phone" class="form-control" pattern="[0-9]{10}"
                                         title="Please enter a valid 10-digit mobile number" placeholder="Mobile Number"
                                         required
                                         style="padding: 1rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem;">
@@ -60,7 +60,8 @@
                                 <div class="form-group text-start">
                                     <label
                                         style="display: block; margin-bottom: 0.8rem; font-weight: 700; color: #1e293b;">Mail-Id</label>
-                                    <input type="email" class="form-control" placeholder="example@domain.com" required
+                                    <input type="email" name="email" class="form-control"
+                                        placeholder="example@domain.com" required
                                         style="padding: 1rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem;">
                                 </div>
                             </div>
@@ -69,7 +70,7 @@
                                     <label
                                         style="display: block; margin-bottom: 0.8rem; font-weight: 700; color: #1e293b;">Inquiry
                                         Type</label>
-                                    <select class="form-select" required
+                                    <select name="inquiry_type" class="form-select" required
                                         style="padding: 1rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem;">
                                         <option value="" disabled selected>Choose an Option</option>
                                         <option>Attach your EV</option>
@@ -87,7 +88,7 @@
                                 <div class="form-group text-start">
                                     <label
                                         style="display: block; margin-bottom: 0.8rem; font-weight: 700; color: #1e293b;">State</label>
-                                    <select class="form-select" required
+                                    <select name="state" class="form-select" required
                                         style="padding: 1rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem;">
                                         <option value="" disabled selected>Select Your State</option>
                                         <!-- States -->
@@ -136,24 +137,24 @@
                                 <div class="form-group text-start">
                                     <label
                                         style="display: block; margin-bottom: 0.8rem; font-weight: 700; color: #1e293b;">City</label>
-                                    <input type="text" class="form-control" placeholder="Your City" required
+                                    <input type="text" name="city" class="form-control" placeholder="Your City" required
                                         style="padding: 1rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem;">
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Row 4: How did you find EonMove -->
+                        <!-- Row 4: How did you find EpnMove -->
                         <div class="form-group text-start mb-5">
                             <label style="display: block; margin-bottom: 0.8rem; font-weight: 700; color: #1e293b;">How
-                                did you find EonMove?</label>
-                            <select class="form-select" required
+                                did you find EpnMove?</label>
+                            <select name="found_us" class="form-select" required
                                 style="padding: 1rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem;">
                                 <option value="" disabled selected>Select an option</option>
                                 <option>Google Search</option>
                                 <option>Website</option>
                                 <option>Social Media</option>
                                 <option>Reference</option>
-                                <option>Saw Eonmove Vehicle on Road</option>
+                                <option>Saw EpnMove Vehicle on Road</option>
                                 <option>Other</option>
                             </select>
                         </div>
@@ -183,8 +184,37 @@
         const thankYouPopup = document.getElementById('thankYouPopup');
 
         if (partnershipForm) {
-            partnershipForm.addEventListener('submit', (e) => {
+            partnershipForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
+
+                const formData = {
+                    name: partnershipForm.querySelector('[name="name"]').value,
+                    phone: partnershipForm.querySelector('[name="phone"]').value,
+                    email: partnershipForm.querySelector('[name="email"]').value,
+                    inquiry_type: partnershipForm.querySelector('[name="inquiry_type"]').value,
+                    state: partnershipForm.querySelector('[name="state"]').value,
+                    city: partnershipForm.querySelector('[name="city"]').value,
+                    found_us: partnershipForm.querySelector('[name="found_us"]').value
+                };
+
+                try {
+                    const response = await fetch(`${window.location.origin}/api/submit-contact`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(formData)
+                    });
+
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        alert(`Submission failed: ${errorData.message || 'Server error'}`);
+                        return;
+                    }
+                } catch (err) {
+                    console.error('Connection Error:', err);
+                    alert(`Could not reach the server at ${window.location.origin}. Please ensure the Node.js server is running.`);
+                    return;
+                }
+
                 thankYouPopup.style.display = 'flex';
                 partnershipForm.reset();
             });

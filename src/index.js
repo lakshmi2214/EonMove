@@ -18,7 +18,7 @@ const startServer = (port) => {
     const server = app.listen(port, () => {
         const ip = getLocalIp();
         const localUrl = `http://localhost:${port}`;
-        console.log('\x1b[32mEonMove Node.js Server Started!\x1b[0m\n');
+        console.log('\x1b[32mEpnMove Node.js Server Started!\x1b[0m\n');
         console.log(`  Local:            ${localUrl}`);
         console.log(`  On Your Network:  http://${ip}:${port}\n`);
 

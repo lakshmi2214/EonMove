@@ -5,7 +5,7 @@
         <section
             style="width: 100%; background: #ffffff; border-bottom: 2px solid #f1f5f9; padding-top: 100px; padding-bottom: 0px; overflow: hidden;">
             <div style="width: 100%; margin: 0 auto; text-align: center;">
-                <img src="/images/16469.png" alt="EonMove Banner"
+                <img src="/images/16469.png" alt="EpnMove Banner"
                     style="width: 100%; height: auto; display: block; margin: 0 auto;">
             </div>
         </section>
@@ -241,7 +241,7 @@
         <!-- Section: Fleet Showcase -->
         <section class="fleet-showcase-section">
             <div class="fleet-showcase-inner">
-                <img src="/images/IMG-20260220-WA0001.jpg" alt="EonMove Fleet" class="fleet-showcase-img">
+                <img src="/images/IMG-20260220-WA0001.jpg" alt="EpnMove Fleet" class="fleet-showcase-img">
             </div>
         </section>
 
@@ -328,20 +328,21 @@
                         <div class="enquiry-form-card">
                             <h2 style="font-size: 2.8rem; font-weight: 900; color: #1e293b; margin-bottom: 2rem;">
                                 Enquiry Form</h2>
-                            <form action="#">
+                            <form id="enquiryForm" action="#">
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <div class="form-group">
                                             <label>Name</label>
-                                            <input type="text" class="form-control" placeholder="Full Name" required>
+                                            <input type="text" name="name" class="form-control" placeholder="Full Name"
+                                                required>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <div class="form-group">
                                             <label>Phone Number</label>
-                                            <input type="tel" class="form-control" placeholder="10-digit Mobile Number"
-                                                pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number"
-                                                required>
+                                            <input type="tel" name="phone" class="form-control"
+                                                placeholder="10-digit Mobile Number" pattern="[0-9]{10}"
+                                                title="Please enter a valid 10-digit phone number" required>
                                         </div>
                                     </div>
                                 </div>
@@ -350,22 +351,22 @@
                                     <div class="col-md-6 mb-3">
                                         <div class="form-group">
                                             <label>Mail-Id</label>
-                                            <input type="email" class="form-control" placeholder="example@domain.com"
-                                                required>
+                                            <input type="email" name="email" class="form-control"
+                                                placeholder="example@domain.com" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <div class="form-group">
                                             <label>Organisation</label>
-                                            <input type="text" class="form-control" placeholder="Organisation Name"
-                                                required>
+                                            <input type="text" name="organisation" class="form-control"
+                                                placeholder="Organisation Name" required>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group mb-4">
                                     <label>Message</label>
-                                    <textarea class="form-control" placeholder="Message"
+                                    <textarea name="message" class="form-control" placeholder="Message"
                                         style="height: 120px;"></textarea>
                                 </div>
 
@@ -392,11 +393,11 @@
                                 </div>
                                 <div class="contact-item mb-4 d-flex align-items-center gap-3">
                                     <i data-lucide="mail" size="28"></i>
-                                    <p>connect@eonmove.com</p>
+                                    <p>connect@epnmove.com</p>
                                 </div>
                                 <div class="contact-item mb-4 d-flex align-items-center gap-3">
                                     <i data-lucide="phone" size="28"></i>
-                                    <p>+91 96636 82266</p>
+                                    <p>+91 90192 09669</p>
                                 </div>
                             </div>
                         </div>
@@ -437,17 +438,41 @@
         });
 
         // Form Submission and Popup Logic
-        const enquiryForm = document.querySelector('.enquiry-form-card form');
+        const enquiryForm = document.getElementById('enquiryForm');
         const thankYouPopup = document.getElementById('thankYouPopup');
 
         if (enquiryForm) {
-            enquiryForm.addEventListener('submit', (e) => {
-                e.preventDefault(); // Prevent actual submission for demo
+            enquiryForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
 
-                // Show the popup
+                const formData = {
+                    name: enquiryForm.querySelector('[name="name"]').value,
+                    phone: enquiryForm.querySelector('[name="phone"]').value,
+                    email: enquiryForm.querySelector('[name="email"]').value,
+                    organisation: enquiryForm.querySelector('[name="organisation"]').value,
+                    message: enquiryForm.querySelector('[name="message"]').value
+                };
+
+                try {
+                    const response = await fetch(`${window.location.origin}/api/submit-enquiry`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(formData)
+                    });
+
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        alert(`Submission failed: ${errorData.message || 'Server error'}`);
+                        return;
+                    }
+                } catch (err) {
+                    console.error('Connection Error:', err);
+                    alert(`Could not reach the server at ${window.location.origin}. Please ensure the Node.js server is running.`);
+                    return;
+                }
+
+                // Show popup and reset
                 thankYouPopup.style.display = 'flex';
-
-                // Optional: Reset the form
                 enquiryForm.reset();
             });
         }

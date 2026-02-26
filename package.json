@@ -4,11 +4,18 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "open-sheet": "node open_sheet.js",
+    "sync-sheets": "node sync_to_sheets.js"
   },
   "dependencies": {
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
     "ejs": "^3.1.10",
     "express": "^5.2.1",
-    "open": "^11.0.0"
+    "google-auth-library": "^10.6.1",
+    "google-spreadsheet": "^5.2.0",
+    "open": "^11.0.0",
+    "xlsx": "^0.18.5"
   }
 }

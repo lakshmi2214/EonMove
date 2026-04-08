@@ -1,0 +1,716 @@
+<%- include('partials/header') %>
+
+    <main>
+        <!-- About Banner Section -->
+        <section class="page-banner"
+            style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop'); height: 400px; background-position: center; background-size: cover; position: relative; display: flex; align-items: center; justify-content: center;">
+            <div class="page-banner-content" style="position: relative; z-index: 2; text-align: center;">
+                <h1 style="color: white; font-size: 3.5rem; font-weight: 800; text-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+                    About EonMov</h1>
+            </div>
+            <div
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: 1;">
+            </div>
+        </section>
+
+
+
+        <style>
+            /* Clients Section */
+            .clients-section {
+                padding: 3rem 0;
+                background: #f8fafc;
+                overflow: hidden;
+                border-bottom: 1px solid #e2e8f0;
+            }
+
+            .clients-heading {
+                font-size: 1.2rem;
+                font-weight: 700;
+                color: #64748b;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+
+            /* Marquee */
+            .marquee-wrapper {
+                position: relative;
+                width: 100%;
+                overflow: hidden;
+            }
+
+            .marquee-content {
+                display: flex;
+                gap: 3rem;
+                animation: clientScroll 18s linear infinite;
+                width: max-content;
+            }
+
+            .marquee-content:hover {
+                animation-play-state: paused;
+            }
+
+            @keyframes clientScroll {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+
+            /* Client Card with animated border */
+            .client-card {
+                position: relative;
+                min-width: 200px;
+                height: 110px;
+                border-radius: 16px;
+                padding: 3px;
+                overflow: hidden;
+                flex-shrink: 0;
+            }
+
+            /* Spinning gradient border */
+            .client-card-border {
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: conic-gradient(#9bcf5a,
+                        #29abe2,
+                        #00874e,
+                        #40b8ea,
+                        #9bcf5a);
+                animation: spinBorder 3s linear infinite;
+                z-index: 0;
+            }
+
+            @keyframes spinBorder {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+            /* Inner card — transparent so logo colors show */
+            .client-card-inner {
+                position: relative;
+                z-index: 1;
+                background: #ffffff;
+                border-radius: 13px;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 1rem 1.5rem;
+            }
+
+            .client-card-inner img {
+                max-width: 140px;
+                max-height: 65px;
+                object-fit: contain;
+                filter: none;
+                transition: transform 0.3s ease;
+            }
+
+            .client-card:hover .client-card-inner img {
+                transform: scale(1.08);
+            }
+
+            .client-placeholder {
+                font-weight: 700;
+                color: #94a3b8;
+                font-size: 0.95rem;
+            }
+
+            /* Mobile */
+            @media (max-width: 768px) {
+                .client-card {
+                    min-width: 160px;
+                    height: 90px;
+                }
+
+                .marquee-content {
+                    gap: 2rem;
+                }
+
+                .client-card-inner img {
+                    max-width: 110px;
+                    max-height: 55px;
+                }
+            }
+        </style>
+
+        <!-- Section: Vision & Mission -->
+        <section style="padding: 6rem 0; border-bottom: 1px solid #e2e8f0;">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 4rem;">
+                    <h2 style="font-size: 2.8rem; font-weight: 800; color: #1e293b;">Our Purpose</h2>
+                    <div style="height: 4px; width: 60px; background: #9bcf5a; margin: 20px auto; border-radius: 10px;">
+                    </div>
+                </div>
+
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <div class="row g-4 justify-content-center">
+                        <!-- Vision Card -->
+                        <div class="col-md-6">
+                            <div class="vm-card vm-vision">
+                                <div class="vm-border-decor"></div>
+                                <div class="vm-icon-circle">
+                                    <i data-lucide="eye" style="color: #29abe2; width: 22px; height: 22px;"></i>
+                                </div>
+                                <h3 class="vm-heading">Our Vision</h3>
+                                <p class="vm-text">
+                                    To lead the global transition to sustainable urban logistics by becoming the most
+                                    reliable and green EV ecosystem provider in India.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Mission Card -->
+                        <div class="col-md-6">
+                            <div class="vm-card vm-mission">
+                                <div class="vm-border-decor"></div>
+                                <div class="vm-icon-circle">
+                                    <i data-lucide="target" style="color: #9bcf5a; width: 22px; height: 22px;"></i>
+                                </div>
+                                <h3 class="vm-heading">Our Mission</h3>
+                                <p class="vm-text">
+                                    To provide seamless, tech-enabled, and zero-emission logistics solutions that
+                                    empower businesses to grow while protecting our environment.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            /* Vision & Mission Cards */
+            .vm-card {
+                padding: 2.5rem 2rem;
+                border-radius: 25px;
+                height: 100%;
+                color: white;
+                position: relative;
+                overflow: hidden;
+                transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                    box-shadow 0.4s ease;
+                cursor: default;
+            }
+
+            .vm-vision {
+                background: linear-gradient(135deg, #29abe2, #2196c9);
+                border: 3px solid rgba(255, 255, 255, 0.35);
+                box-shadow: 0 12px 30px rgba(41, 171, 226, 0.2);
+            }
+
+            .vm-mission {
+                background: linear-gradient(135deg, #9bcf5a, #7cb842);
+                border: 3px solid rgba(255, 255, 255, 0.35);
+                box-shadow: 0 12px 30px rgba(155, 207, 90, 0.2);
+            }
+
+            /* Decorative inner dashed border */
+            .vm-border-decor {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+                border: 2px dashed rgba(255, 255, 255, 0.25);
+                border-radius: 18px;
+                pointer-events: none;
+                transition: border-color 0.4s ease, transform 0.4s ease;
+            }
+
+            /* Hover effects */
+            .vm-card:hover {
+                transform: translateY(-10px) scale(1.03);
+            }
+
+            .vm-vision:hover {
+                box-shadow: 0 20px 50px rgba(41, 171, 226, 0.35),
+                    0 0 20px rgba(41, 171, 226, 0.15);
+            }
+
+            .vm-mission:hover {
+                box-shadow: 0 20px 50px rgba(155, 207, 90, 0.35),
+                    0 0 20px rgba(155, 207, 90, 0.15);
+            }
+
+            .vm-card:hover .vm-border-decor {
+                border-color: rgba(255, 255, 255, 0.5);
+                transform: scale(0.98);
+            }
+
+            /* Icon circle */
+            .vm-icon-circle {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 55px;
+                height: 55px;
+                background: white;
+                border-radius: 50%;
+                margin-bottom: 1.5rem;
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+                transition: transform 0.4s ease, box-shadow 0.4s ease;
+            }
+
+            .vm-card:hover .vm-icon-circle {
+                transform: scale(1.1) rotate(5deg);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            }
+
+            /* Heading */
+            .vm-heading {
+                font-size: 1.8rem;
+                font-weight: 800;
+                margin-bottom: 1rem;
+                color: white;
+            }
+
+            /* Text */
+            .vm-text {
+                font-size: 1rem;
+                line-height: 1.7;
+                color: rgba(255, 255, 255, 0.92);
+                margin-bottom: 0;
+            }
+
+            /* Mobile */
+            @media (max-width: 768px) {
+                .vm-card {
+                    padding: 2rem 1.5rem;
+                }
+
+                .vm-heading {
+                    font-size: 1.5rem;
+                }
+            }
+        </style>
+
+        <!-- Section 3: High Quality Experience -->
+        <section style="padding: 8rem 0; background: #f0fdf4;"> <!-- Light Logo Green -->
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <!-- Left Content -->
+                    <div class="col-lg-6">
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 2rem;">
+
+
+                        </div>
+                        <h2
+                            style="font-size: 1.5rem; font-weight: 950; color: #1e293b; margin-bottom: 2.5rem; line-height: 1.1;">
+                            The journey of Eon Mov began <br />on the workshop floor.</h2>
+                        <p
+                            style="color: #475569; line-height: 1.8; font-size: 1.1rem; margin-bottom: 1.5rem; text-align: justify;">
+                            With over 15 years of experience as an Automobile Engineer, the founder spent his early
+                            career working with major automobile brands, building deep technical expertise in vehicle
+                            engineering, diagnostics, and commercial fleet performance. This hands-on exposure to how
+                            vehicles are designed, built, and operated laid the foundation for a practical, ground-level
+                            understanding of the transport industry.
+                        </p>
+                        <p
+                            style="color: #475569; line-height: 1.8; font-size: 1.1rem; margin-bottom: 3.5rem; text-align: justify;">
+                            Recognizing the gap between theory and real-world operations, he went on to build his own
+                            automobile workshop, followed by the launch of a transport company. Managing fleets
+                            daily—drivers, maintenance, fuel costs, breakdowns, and city logistics—gave him first-hand
+                            insight into the inefficiencies and environmental impact of traditional trucking.
+                            That experience sparked a clear realization: the future of logistics must be clean,
+                            efficient, and economically viable.</p>
+                        <a href="/services" class="btn"
+                            style="padding: 18px 45px; border-radius: 50px; background: #29abe2; color: white; font-weight: 900; font-size: 1.1rem; box-shadow: 0 10px 25px rgba(41,171,226,0.3); transition: all 0.3s ease;">Explore
+                            Services</a>
+                    </div>
+
+                    <!-- Right Graphic (Simplified Founder Image) -->
+                    <div class="col-lg-6">
+                        <div style="text-align: center;">
+                            <img src="/images/download (1).png" alt="EpnMove Founder"
+                                style="width: 280px; height: auto; border-radius: 0; display: block; margin: 0 auto;">
+                            <div style="margin-top: 2rem; text-align: left; padding: 0 10px;">
+                                <h4 style="font-size: 2rem; font-weight: 950; color: #1e293b; margin-bottom: 8px;">
+                                    Devarath</h4>
+                                <p
+                                    style="color: #475569; line-height: 1.8; font-size: 1.1rem; margin-bottom: 1.5rem; text-align: justify;">
+                                    EonMov is not just an EV fleet—it is a movement toward sustainable, intelligent,
+                                    and responsible transport.</p>
+                                <div style="height: 6px; width: 60px; background: #9bcf5a; border-radius: 10px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Our Leadership (Zig-Zag Layout) -->
+        <section style="background: #ffffff; position: relative; overflow: hidden;">
+            <div style="padding: 6rem 0 3rem;">
+                <div class="container" style="position: relative; z-index: 2;">
+                    <div style="text-align: center; margin-bottom: 5rem;">
+                        <h2 style="font-size: 3.5rem; font-weight: 950; color: #1e293b; letter-spacing: -1px;">Our
+                            Leadership Team</h2>
+                        <p style="color: #64748b; margin-top: 1rem; font-weight: 600; font-size: 1.1rem;">
+                            The visionaries behind EonMov's green revolution.</p>
+                        <div
+                            style="height: 6px; width: 80px; background: #9bcf5a; margin: 25px auto; border-radius: 10px;">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="leadership-blocks-wrapper">
+
+                    <!-- Founder 1: Text LEFT, Image RIGHT -->
+                    <div style="padding: 5rem 0; background: #ffffff;">
+                        <div class="container">
+                            <div class="zigzag-row">
+                                <div class="zigzag-text">
+                                    <div class="zigzag-role-badge">Co-Founder</div>
+                                    <h3 class="zigzag-name">Srikanth V nalige</h3>
+                                    <p class="zigzag-desc">
+                                        Expert in sustainable logistics and EV technology integration. Leading the
+                                        strategic
+                                        outreach and partnership initiatives at EpnMove.
+                                    </p>
+                                    <div class="zigzag-accent-line"></div>
+                                </div>
+                                <div class="zigzag-image-wrapper">
+                                    <img src="/images/download (2).png" alt="Co-Founder"
+                                        style="width: 280px; height: auto; border-radius: 0; display: block;">
+                                    <h4 style="font-size: 2rem; font-weight: 950; color: #1e293b; margin-bottom: 8px;">
+                                        Srikanth V Nalige </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Founder 2: Image LEFT, Text RIGHT (reversed)-->
+                    <div style="padding: 5rem 0; background: rgba(41, 171, 226, 0.05);">
+                        <div class="container">
+                            <div class="zigzag-row zigzag-reverse">
+                                <div class="zigzag-text">
+                                    <div class="zigzag-role-badge">Co-Founder</div>
+                                    <h3 class="zigzag-name">Baapu Gowda</h3>
+                                    <p class="zigzag-desc">
+                                        Baapu Gowda is an accomplished Automotive Training Manager and Certified
+                                        Diagnostic
+                                        Engineer with over 11 years of global experience across electric and internal
+                                        combustion
+                                        vehicle platforms. He specializes in EV technical training, advanced vehicle
+                                        diagnostics, high-voltage systems, and after-sales operations.
+                                    </p>
+                                    <p class="zigzag-desc">
+                                        He has successfully delivered training and diagnostic solutions for leading
+                                        global
+                                        automotive brands including Tesla, Mercedes-Benz, Zeekr, Smart, Nissan, and
+                                        Infiniti,
+                                        bringing deep technical expertise and real-world industry experience. With a
+                                        strong
+                                        background in mentoring, technical documentation, and remote diagnostics, Baapu
+                                        plays a
+                                        vital role in upskilling teams, improving service efficiency, and helping
+                                        organizations
+                                        adapt to rapidly evolving automotive technologies.
+                                    </p>
+                                    <div class="zigzag-accent-line"></div>
+                                </div>
+                                <div class="zigzag-image-wrapper">
+                                    <img src="/images/download(3).png" alt="Co-Founder"
+                                        style="width: 280px; height: auto; border-radius: 0; display: block;">
+                                    <h4 style="font-size: 2rem; font-weight: 950; color: #1e293b; margin-bottom: 8px;">
+                                        Baapu Gowda</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Founder 3: Text LEFT, Image RIGHT -->
+                    <div style="padding: 5rem 0; background: rgba(255, 255, 255, 0.08);">
+                        <div class="container">
+                            <div class="zigzag-row">
+                                <div class="zigzag-text">
+                                    <div class="zigzag-role-badge">Co-Founder</div>
+                                    <h3 class="zigzag-name">Co-Founder Name</h3>
+                                    <p class="zigzag-desc">
+                                        Focused on operational excellence and driver-partner growth, creating a
+                                        supportive
+                                        ecosystem that empowers our workforce.
+                                    </p>
+                                    <div class="zigzag-accent-line"></div>
+                                </div>
+                                <div class="zigzag-image-wrapper">
+                                    <img src="/images/download (4).png" alt="Co-Founder"
+                                        style="width: 280px; height: auto; border-radius: 0; display: block;">
+                                    <h4 style="font-size: 2rem; font-weight: 950; color: #1e293b; margin-bottom: 8px;">
+                                        Sahana Shivanand</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Decorative Background Shapes -->
+                    <div
+                        style="position: absolute; top: -100px; left: -100px; width: 400px; height: 400px; background: rgba(155,207,90,0.05); border-radius: 50%;">
+                    </div>
+                    <div
+                        style="position: absolute; bottom: -80px; right: -80px; width: 350px; height: 350px; background: rgba(41,171,226,0.04); border-radius: 50%;">
+                    </div>
+        </section>
+
+        <!-- Section: Moving Clients Marquee -->
+        <section class="clients-section">
+            <div class="container-fluid">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h3 class="clients-heading">Our Trusted Clients</h3>
+                </div>
+
+                <div class="marquee-wrapper">
+                    <div class="marquee-content">
+                        <!-- Client 1: CureFoods -->
+                        <div class="client-card">
+                            <div class="client-card-border"></div>
+                            <div class="client-card-inner">
+                                <img src="/images/curefoods.png" alt="CureFoods">
+                            </div>
+                        </div>
+                        <!-- Client 2: SendIt -->
+                        <div class="client-card">
+                            <div class="client-card-border"></div>
+                            <div class="client-card-inner">
+                                <img src="/images/sendit-logo-blue.png" alt="SendIt">
+                            </div>
+                        </div>
+                        <!-- Placeholder -->
+                        <div class="client-card">
+                            <div class="client-card-border"></div>
+                            <div class="client-card-inner">
+                                <span class="client-placeholder">Partner Portfolio</span>
+                            </div>
+                        </div>
+
+                        <!-- Repeat for seamless scrolling -->
+                        <div class="client-card">
+                            <div class="client-card-border"></div>
+                            <div class="client-card-inner">
+                                <img src="/images/curefoods.png" alt="CureFoods">
+                            </div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-card-border"></div>
+                            <div class="client-card-inner">
+                                <img src="/images/sendit-logo-blue.png" alt="SendIt">
+                            </div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-card-border"></div>
+                            <div class="client-card-inner">
+                                <span class="client-placeholder">Partner Portfolio</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <style>
+            /* Zig-Zag Leadership Layout */
+            .zigzag-leadership-wrapper {
+                max-width: 1050px;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                gap: 5rem;
+            }
+
+            .zigzag-row {
+                display: flex;
+                align-items: center;
+                gap: 4rem;
+            }
+
+            /* Reversed row: image on left, text on right */
+            .zigzag-row.zigzag-reverse {
+                flex-direction: row-reverse;
+            }
+
+            /* Text side */
+            .zigzag-text {
+                flex: 1;
+                min-width: 0;
+            }
+
+            .zigzag-role-badge {
+                display: inline-block;
+                background: #f0fdf4;
+                color: #00874e;
+                font-size: 0.8rem;
+                font-weight: 800;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                padding: 6px 18px;
+                border-radius: 50px;
+                border: 1.5px solid rgba(155, 207, 90, 0.5);
+                margin-bottom: 1.2rem;
+            }
+
+            .zigzag-name {
+                font-size: 2rem;
+                font-weight: 950;
+                color: #1e293b;
+                margin-bottom: 1rem;
+                line-height: 1.2;
+            }
+
+            .zigzag-desc {
+                font-size: 1.1rem;
+                color: #475569;
+                line-height: 1.8;
+                font-weight: 500;
+                margin-bottom: 1.5rem;
+                text-align: justify;
+            }
+
+            .zigzag-accent-line {
+                height: 5px;
+                width: 60px;
+                background: linear-gradient(90deg, #9bcf5a, #29abe2);
+                border-radius: 10px;
+            }
+
+            /* Image side */
+            .zigzag-image-wrapper {
+                flex: 0 0 280px;
+                position: relative;
+            }
+
+            .zigzag-image-card {
+                position: relative;
+                z-index: 2;
+                background: #ffffff;
+                padding: 1rem;
+                border-radius: 30px;
+                border: 4px solid rgba(155, 207, 90, 0.4);
+                box-shadow: 0 20px 50px rgba(155, 207, 90, 0.15), 0 0 15px rgba(155, 207, 90, 0.08);
+                transition: transform 0.4s ease, box-shadow 0.4s ease;
+                overflow: hidden;
+            }
+
+            .zigzag-image-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 30px 60px rgba(155, 207, 90, 0.2), 0 0 20px rgba(155, 207, 90, 0.12);
+            }
+
+            .zigzag-image-card img {
+                width: 100%;
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
+                object-position: top;
+                border-radius: 22px;
+                display: block;
+            }
+
+            .zigzag-bg-shape {
+                position: absolute;
+                top: 15px;
+                right: -15px;
+                width: 100%;
+                height: 100%;
+                background: rgba(155, 207, 90, 0.08);
+                border-radius: 30px;
+                z-index: 1;
+                transform: rotate(3deg);
+                pointer-events: none;
+            }
+
+            .zigzag-reverse .zigzag-bg-shape {
+                right: auto;
+                left: -15px;
+                transform: rotate(-3deg);
+            }
+
+            /* Responsive: tablet */
+            @media (max-width: 992px) {
+                .zigzag-row {
+                    gap: 2.5rem;
+                }
+
+                .zigzag-image-wrapper {
+                    flex: 0 0 300px;
+                }
+
+                .zigzag-name {
+                    font-size: 1.7rem;
+                }
+            }
+
+            /* Responsive: mobile — stack vertically */
+            @media (max-width: 768px) {
+                .zigzag-leadership-wrapper {
+                    gap: 3.5rem;
+                }
+
+                .zigzag-row,
+                .zigzag-row.zigzag-reverse {
+                    flex-direction: column;
+                    text-align: center;
+                }
+
+                .zigzag-image-wrapper {
+                    flex: 0 0 auto;
+                    width: 100%;
+                    max-width: 320px;
+                    margin: 0 auto;
+                }
+
+                .zigzag-text {
+                    order: 2;
+                }
+
+                .zigzag-image-wrapper {
+                    order: 1;
+                }
+
+                .zigzag-accent-line {
+                    margin: 0 auto;
+                }
+
+                .zigzag-bg-shape,
+                .zigzag-reverse .zigzag-bg-shape {
+                    right: -10px;
+                    left: auto;
+                    transform: rotate(2deg);
+                }
+
+                .zigzag-name {
+                    font-size: 1.5rem;
+                }
+            }
+        </style>
+    </main>
+
+    <style>
+        @keyframes morph {
+            0% {
+                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            }
+
+            100% {
+                border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+            }
+        }
+
+        .h-100:hover {
+            transform: translateY(-15px);
+        }
+    </style>
+
+    <%- include('partials/footer') %>
